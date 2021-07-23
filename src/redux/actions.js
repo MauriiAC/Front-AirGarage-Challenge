@@ -8,7 +8,7 @@ export function searchParkings(data) {
     console.log('entro a la action searchPar...')
 	return function (dispatch) {
         dispatch({ type: SEARCHING })
-		return axios.get(`https://back-air-garage-challenge.herokuapp.comc/search?location=${data}`)
+		return axios.get(`https://back-air-garage-challenge.herokuapp.com/search?location=${data}`)
         .then(
             res => {
                 dispatch({type: SEARCH_PARKINGS, payload: res.data});
