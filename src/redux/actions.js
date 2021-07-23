@@ -5,7 +5,6 @@ export const SEARCH_ERR = 'SEARCH_ERR';
 export const CLEAN_ERR = 'CLEAN_ERR';
 
 export function searchParkings(data) {
-    console.log('entro a la action searchPar...')
 	return function (dispatch) {
         dispatch({ type: SEARCHING })
 		return axios.get(`https://back-air-garage-challenge.herokuapp.com/search?location=${data}`)
@@ -15,14 +14,12 @@ export function searchParkings(data) {
             },
             err => {
                 dispatch({type: SEARCH_ERR});
-                console.log(err);
             }
         );
     };
 }
 
 export function cleanErr(){
-    console.log('entro a la action cleanErr')
     return function(dispatch){
         dispatch({ type: CLEAN_ERR })
     }

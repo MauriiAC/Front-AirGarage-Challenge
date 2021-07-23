@@ -20,7 +20,6 @@ const reducer = (state = initialState, action) => {
 			return {...state, parkingList: [], searching: false, errSearch: true}
 
 		case CLEAN_ERR:
-			console.log('entro al case de cleanErr')
 			return {...state, errSearch: false}
 
 		default:
